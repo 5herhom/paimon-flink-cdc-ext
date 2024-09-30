@@ -1,0 +1,65 @@
+{
+  "sourceTypeCode": 0,
+  "globalConfig": {},
+  "ip": "172.21.87.55",
+  "port": "3306",
+  "username": "root",
+  "pwd": "root",
+  "sourceConfig": {
+    "scan.startup.timestamp-millis": "1726300732567",
+    "scan.startup.mode": "timestamp",
+    "server-time-zone": "Asia/Shanghai"
+  },
+  "catalogConfig": {
+    "warehouse": "hdfs://hdfs_host:8020/user/hive/warehouse/"
+  },
+  "sinkConfig": {},
+  "metaColumnTypeToTargetColName": {
+    "FULL_TABLE_NAME": "src_tbl",
+    "BINLOG_TIME": "binlog_time"
+  },
+  "dataPairList": [
+    {
+      "srcDatabasePattern": "ods_test",
+      "srcTablePattern": "test_d_(\\d+)$",
+      "tgtDatabase": "temp",
+      "tgtTable": "flink_lake_test_d_part_i",
+      "pkList": [
+        "k"
+      ],
+      "dtColumns": [
+        "add_time"
+      ]
+    },
+    {
+      "srcDatabasePattern": "ods_test",
+      "srcTablePattern": "test_dim_1",
+      "tgtDatabase": "temp",
+      "tgtTable": "flink_lake_test_dim_1_part_f",
+      "pkList": [
+        "k"
+      ]
+    },
+    {
+      "srcDatabasePattern": "ods_test",
+      "srcTablePattern": "test_dim_(\\d+)$",
+      "tgtDatabase": "temp",
+      "tgtTable": "flink_lake_test_dim_part_f",
+      "pkList": [
+        "k"
+      ]
+    },
+    {
+      "srcDatabasePattern": "ods_test",
+      "srcTablePattern": "test_dim_(\\d+)$",
+      "tgtDatabase": "temp",
+      "tgtTable": "flink_lake_test_dim_part_i",
+      "pkList": [
+        "k"
+      ],
+      "dtColumns": [
+        "add_time"
+      ]
+    }
+  ]
+}
